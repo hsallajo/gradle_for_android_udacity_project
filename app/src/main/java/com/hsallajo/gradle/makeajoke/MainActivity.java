@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ProgressBar;
 
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
@@ -25,8 +27,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        hideProgressBar();
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -49,7 +57,22 @@ public class MainActivity extends AppCompatActivity {
 
     public void tellJoke(View view) {
         JokesEndpointsTask asyncTask = new JokesEndpointsTask();
+        showProgressBar();
         asyncTask.execute();
+    }
+
+    private void showProgressBar(){
+        ProgressBar p = findViewById(R.id.progress_have_a_joke);
+        p.setVisibility(View.VISIBLE);
+        Button b = findViewById(R.id.btn_tell_joke);
+        b.setVisibility(View.GONE);
+    }
+
+    private void hideProgressBar(){
+        ProgressBar p = findViewById(R.id.progress_have_a_joke);
+        p.setVisibility(View.GONE);
+        Button b = findViewById(R.id.btn_tell_joke);
+        b.setVisibility(View.VISIBLE);
     }
 
     public void showJoke(String aJoke){
@@ -80,7 +103,14 @@ public class MainActivity extends AppCompatActivity {
 
                 mJokeApiService = builder.build();
 
+                /*try {
+                    Thread.sleep(8000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }*/
+
                 Log.d(TAG, "devappserver initialized");
+
             }
 
 

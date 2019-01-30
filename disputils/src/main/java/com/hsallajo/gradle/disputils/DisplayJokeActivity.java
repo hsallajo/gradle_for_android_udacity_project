@@ -2,6 +2,7 @@ package com.hsallajo.gradle.disputils;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 public class DisplayJokeActivity extends AppCompatActivity {
@@ -31,6 +32,7 @@ public class DisplayJokeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_display_joke);
         TextView tv = findViewById(R.id.tv_joke_content);
         tv.setText(aJoke);
+
     }
 
     @Override
