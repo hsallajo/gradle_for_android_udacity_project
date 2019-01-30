@@ -35,6 +35,19 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    flavorDimensions "version"
+
+    productFlavors {
+        free {
+            applicationId = 'com.hsallajo.gradle.makeajoke.free'
+            dimension = "version"
+        }
+        paid {
+            applicationId = 'com.hsallajo.gradle.makeajoke.paid'
+            dimension = "version"
+        }
+    }
 }
 
 dependencies {
@@ -45,7 +58,7 @@ dependencies {
 
     endpointsServer project(path: ':backend', configuration: 'endpoints')
     //implementation 'com.google.android.gms:play-services-ads:11.8.0'
-    implementation 'com.google.android.gms:play-services-ads:15.0.1'
+    freeImplementation 'com.google.android.gms:play-services-ads:15.0.1'
     implementation ('com.google.http-client:google-http-client-android:1.23.0') {
         exclude group: "commons-logging", module: "commons-logging"
         exclude group: "org.apache.httpcomponents", module: "httpclient"
