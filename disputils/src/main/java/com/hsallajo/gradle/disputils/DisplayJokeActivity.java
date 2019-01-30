@@ -13,7 +13,7 @@ public class DisplayJokeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if(savedInstanceState != null){
+        if (savedInstanceState != null) {
 
             aJoke = savedInstanceState.getString(EXTRA_JOKE_CONTENTS, "");
 
@@ -21,8 +21,8 @@ public class DisplayJokeActivity extends AppCompatActivity {
 
             Bundle args = getIntent().getExtras();
 
-            if( args != null){
-                if(args.containsKey(EXTRA_JOKE_CONTENTS)){
+            if (args != null) {
+                if (args.containsKey(EXTRA_JOKE_CONTENTS)) {
                     aJoke = args.getString(EXTRA_JOKE_CONTENTS);
                 }
             }
