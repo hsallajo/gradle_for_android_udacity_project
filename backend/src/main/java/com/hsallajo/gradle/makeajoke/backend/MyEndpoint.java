@@ -1,4 +1,4 @@
-package com.udacity.gradle.builditbigger.backend;
+package com.hsallajo.gradle.makeajoke.backend;
 
 import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
@@ -12,8 +12,8 @@ import com.hsallajo.gradle.jokes.Jokes;
         name = "jokesApi",
         version = "v1",
         namespace = @ApiNamespace(
-                ownerDomain = "backend.builditbigger.gradle.udacity.com",
-                ownerName = "backend.builditbigger.gradle.udacity.com",
+                ownerDomain = "backend.makeajoke.gradle.hsallajo.com",
+                ownerName = "backend.makeajoke.gradle.hsallajo.com",
                 packagePath = ""
         )
 )

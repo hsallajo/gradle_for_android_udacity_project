@@ -1,4 +1,4 @@
-package com.udacity.gradle.builditbigger.backend;
+package com.hsallajo.gradle.makeajoke.backend;
 
 /** The object model for the data we are sending through endpoints */
 public class MyBean {

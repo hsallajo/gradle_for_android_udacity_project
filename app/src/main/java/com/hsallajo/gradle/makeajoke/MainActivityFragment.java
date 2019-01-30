@@ -1,4 +1,4 @@
-package com.udacity.gradle.builditbigger;
+package com.hsallajo.gradle.makeajoke;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

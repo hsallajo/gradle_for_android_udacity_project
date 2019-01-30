@@ -1,4 +1,4 @@
-package com.udacity.gradle.builditbigger;
+package com.hsallajo.gradle.makeajoke;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -14,7 +14,7 @@ import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
 import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
 import com.hsallajo.gradle.disputils.DisplayJokeActivity;
-import com.udacity.gradle.builditbigger.backend.jokesApi.JokesApi;
+import com.hsallajo.gradle.makeajoke.backend.jokesApi.JokesApi;
 
 import java.io.IOException;
 
