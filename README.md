@@ -1,9 +1,16 @@
 # Gradle for Android and Java Udacity Project
 
-The project is part and 4th project of Udacity Android Developer Nanodegree. Project is a multiproject demonstrating various ways to use Gradle: Java and Android libraries, build variants and flavors enabling apps with and without mobile adds and integration testing with development server. Gradle App Engine Plugin, Google cloud endpoints framework and App Engine development server are used.
+The project is part and 4th project of Udacity Android Developer Nanodegree. Project is a multiproject demonstrating various ways to use Gradle: Java and Android libraries, build variants and flavors enabling apps with and without mobile adds, and integration testing with development server. Gradle App Engine Plugin, Google cloud endpoints framework and App Engine development server are used.
 
 ## General
-App loads jokes from library deployed in backend. This is simulated with development server running locally.
+App loads jokes from Google Cloud Endpoints module and displays them using local Android Library. This is simulated with App Engine server running locally.
+Project contains
+- A Java library for supplying jokes.
+- An Android library with an activity that displays jokes passed to it as intent extras.
+- Connected tests to verify that the AsyncTask is indeed loading jokes.
+- Paid/free flavors. The paid flavor has no ads and no unnecessary dependencies.
+- Ads in the free version.
+- Loading indicator while the joke is being fetched from the server.
 
 
 License
