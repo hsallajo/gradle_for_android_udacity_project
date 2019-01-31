@@ -2,6 +2,7 @@ package com.hsallajo.gradle.testing;
 
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
 
@@ -43,15 +44,12 @@ public class getJokeTest {
         protected boolean matchesSafely(View item) {
 
             String s = ((TextView) item).getText().toString();
-            if(s != null && !s.isEmpty())
-                return true;
+            return !TextUtils.isEmpty(s);
 
-            return false;
         }
 
         @Override
         public void describeTo(Description description) {
-
         }
     }
 }

@@ -7,8 +7,8 @@ import org.junit.Test;
 public class JokeTest {
 
     @Test
-    public void JokeTest() {
+    public void test_jokeIsValidString() {
         String res = Jokes.getJoke();
-        Assert.assertTrue(res != "" && !res.isEmpty());
+        Assert.assertTrue(res != null && !res.isEmpty());
     }
 }

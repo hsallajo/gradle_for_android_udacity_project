@@ -77,10 +77,6 @@ public class MainActivity extends AppCompatActivity implements WorkerFragment.Jo
     }
 
     @Override
-    public void onProgressUpdate(int percent) {
-    }
-
-    @Override
     public void onCancelled() {
         hideProgressBar();
         android.widget.Toast.makeText(this
