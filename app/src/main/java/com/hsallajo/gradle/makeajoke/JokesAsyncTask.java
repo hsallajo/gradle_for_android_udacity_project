@@ -15,6 +15,7 @@ import java.io.IOException;
 
 public class JokesAsyncTask extends AsyncTask<Pair<Context, String>, Integer, String> {
 
+    private static final String ROOT_URL = "http://10.0.2.2:8080/_ah/api/";
     private final String TAG = JokesAsyncTask.class.getSimpleName();
     private JokesApi mJokeApiService = null;
     private Context context;
@@ -27,38 +28,35 @@ public class JokesAsyncTask extends AsyncTask<Pair<Context, String>, Integer, St
         if (mJokeApiService == null){
             JokesApi.Builder builder = new JokesApi.Builder(AndroidHttp.newCompatibleTransport(),
                     new AndroidJsonFactory(), null)
-                    .setRootUrl("http://10.0.2.2:8080/_ah/api/")
+                    .setRootUrl(ROOT_URL)
                     .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
                         @Override
                         public void initialize(AbstractGoogleClientRequest<?> request) throws IOException {
                             request.setDisableGZipContent(true);
                         }
                     });
-            // end options for devappserver
-/*            try {
-                Thread.sleep(10000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }*/
+
 
             mJokeApiService = builder.build();
-
-            Log.d(TAG, "devappserver initialized");
-
         }
 
         try {
             return mJokeApiService.tellJoke("foo").execute().getData();
         } catch (IOException e) {
-            return e.getMessage();
+            Log.e(TAG, "doInBackground: IOException e: " + e.getMessage());
+            return null;
         }
     }
 
     @Override
     protected void onPostExecute(String s) {
-        //showJoke(s);
-        Log.d(TAG, "onPostExecute: " + "kissa");
-        ((WorkerFragment.JokeBgTaskCallbacks)context).onPostExecute(s);
+
+        if(s == null){
+            ((WorkerFragment.JokeBgTaskCallbacks)context).onCancelled();
+        } else {
+            ((WorkerFragment.JokeBgTaskCallbacks)context).onPostExecute(s);
+        }
+
     }
 
     @Override

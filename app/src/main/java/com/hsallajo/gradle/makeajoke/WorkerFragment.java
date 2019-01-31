@@ -5,7 +5,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.util.Pair;
-import android.util.Log;
+
+import static com.hsallajo.gradle.networkutils.NetworkUtils.isOnline;
 
 public class WorkerFragment extends Fragment {
 
@@ -39,13 +40,14 @@ public class WorkerFragment extends Fragment {
 
         // Retain this fragment across configuration changes.
         setRetainInstance(true);
-        Log.d(TAG, "onCreate: ");
-
     }
     
     public void loadJoke(){
-        Log.d(TAG, "loadJoke: ");
+        if(!isOnline(getContext())){
+            ((JokeBgTaskCallbacks)mParentActivity).onCancelled();
+        }
+
         mTask = new JokesAsyncTask();
-        mTask.execute(new Pair<Context, String>(mParentActivity, "koira"));
+        mTask.execute(new Pair<Context, String>(mParentActivity, ""));
     }
 }
