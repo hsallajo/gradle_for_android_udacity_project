@@ -33,6 +33,18 @@ public class DisplayJokeActivity extends AppCompatActivity {
         TextView tv = findViewById(R.id.tv_joke_content);
         tv.setText(aJoke);
 
+        if(getSupportActionBar() != null)
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:
+                finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

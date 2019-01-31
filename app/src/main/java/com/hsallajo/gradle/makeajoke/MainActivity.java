@@ -31,8 +31,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
+    protected void onRestart() {
+        super.onRestart();
+        Log.d("lifecycle", "onRestart: ");
         hideProgressBar();
     }
 
@@ -100,19 +101,17 @@ public class MainActivity extends AppCompatActivity {
                             }
                         });
                 // end options for devappserver
-
-                mJokeApiService = builder.build();
-
-                /*try {
-                    Thread.sleep(8000);
+                try {
+                    Thread.sleep(10000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
-                }*/
+                }
+
+                mJokeApiService = builder.build();
 
                 Log.d(TAG, "devappserver initialized");
 
             }
-
 
             try {
                 return mJokeApiService.tellJoke("foo").execute().getData();
