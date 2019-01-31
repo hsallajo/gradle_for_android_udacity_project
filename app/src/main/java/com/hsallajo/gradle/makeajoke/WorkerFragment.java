@@ -89,7 +89,7 @@ public class WorkerFragment extends Fragment {
             }
 
             try {
-                return mJokeApiService.tellJoke("name").execute().getData();
+                return mJokeApiService.tellJoke().execute().getData();
             } catch (IOException e) {
                 Log.e(TAG, "doInBackground error: IOException e: " + e.getMessage());
                 return null;
