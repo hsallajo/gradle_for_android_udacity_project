@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -16,7 +14,6 @@ public class MainActivity extends AppCompatActivity implements WorkerFragment.Jo
 
     public static final String TAG_AD_FRAGMENT = "tag_ad_fragment";
     public static final String TAG_WORKER_FRAGMENT = "tag_worker_fragment";
-    public static final String TAG = MainActivity.class.getSimpleName();
     private WorkerFragment mWorkerFragment;
 
     @Override
@@ -77,10 +74,6 @@ public class MainActivity extends AppCompatActivity implements WorkerFragment.Jo
         Intent i = new Intent(this, DisplayJokeActivity.class);
         i.putExtra(DisplayJokeActivity.EXTRA_JOKE_CONTENTS, aJoke);
         startActivity(i);
-    }
-
-    @Override
-    public void onPreExecute() {
     }
 
     @Override

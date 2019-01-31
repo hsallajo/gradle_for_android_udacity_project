@@ -15,7 +15,7 @@ public class Jokes {
             , "Evening news is where they begin with 'Good evening', and then proceed to tell you why it isn't."
             , "If you think nobody cares if you're alive, try missing a couple of payments."
             , "Did you know that dolphins are so smart that within a few weeks of captivity, they can train people to stand on the very edge of the pool and throw them fish?"
-            , "I saw a woman wearing a sweat shirt with “Guess” on it…so I said “Implants?”"
+            , "I saw a woman wearing a sweat shirt with 'Guess' on it…so I said 'Implants?'"
             , "Why does someone believe you when you say there are four billion stars, but checks when you say the paint is wet?"
             , "A clear conscience is usually the sign of a bad memory."
             , "The shinbone is a device for finding furniture in a dark room."

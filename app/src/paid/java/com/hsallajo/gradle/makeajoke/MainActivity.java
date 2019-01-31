@@ -66,10 +66,6 @@ public class MainActivity extends AppCompatActivity implements WorkerFragment.Jo
     }
 
     @Override
-    public void onPreExecute() {
-    }
-
-    @Override
     public void onProgressUpdate(int percent) {
     }
 
