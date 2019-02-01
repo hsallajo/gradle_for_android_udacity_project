@@ -12,8 +12,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements WorkerFragment.JokeBgTaskCallbacks {
 
-    public static final String TAG_AD_FRAGMENT = "tag_ad_fragment";
-    public static final String TAG_WORKER_FRAGMENT = "tag_worker_fragment";
+    private static final String TAG_AD_FRAGMENT = "tag_ad_fragment";
+    private static final String TAG_WORKER_FRAGMENT = "tag_worker_fragment";
     private WorkerFragment mWorkerFragment;
 
     @Override
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements WorkerFragment.Jo
         b.setVisibility(View.VISIBLE);
     }
 
-    public void showJoke(String aJoke){
+    private void showJoke(String aJoke){
         Intent i = new Intent(this, DisplayJokeActivity.class);
         i.putExtra(DisplayJokeActivity.EXTRA_JOKE_CONTENTS, aJoke);
         startActivity(i);

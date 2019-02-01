@@ -22,7 +22,7 @@ public class Jokes {
             , "Laugh at your problems, everybody else does."
             , "Children in the back seats of cars cause accidents, but accidents in the back seats of cars cause children."
             , "Artificial intelligence is no match for natural stupidity."
-            , "How many divorced men does it take to change a light bulb? — Who cares? They never get the house anyway."
+            , "How many divorced men does it take to change a light bulb? -Who cares? They never get the house anyway."
             , "Why do men get married? So they don't have to hold-in their stomachs any more."};
 
     public static String getJoke() {

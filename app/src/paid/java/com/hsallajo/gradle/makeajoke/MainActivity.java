@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -15,7 +13,6 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity implements WorkerFragment.JokeBgTaskCallbacks {
 
     public static final String TAG_WORKER_FRAGMENT = "tag_worker_fragment";
-    public static final String TAG = MainActivity.class.getSimpleName();
     private WorkerFragment mWorkerFragment;
 
     @Override

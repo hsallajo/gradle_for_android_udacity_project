@@ -64,7 +64,7 @@ public class WorkerFragment extends Fragment {
         private static final String ROOT_URL = "http://10.0.2.2:8080/_ah/api/";
         private final String TAG = JokesAsyncTask.class.getSimpleName();
         private JokesApi mJokeApiService = null;
-        private WeakReference<Context> contextRef;
+        private final WeakReference<Context> contextRef;
 
         JokesAsyncTask(Context c){
             contextRef = new WeakReference<>(c);
